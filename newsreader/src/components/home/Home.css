@@ -1,0 +1,49 @@
+body {
+  font-family: "Noto Serif", serif;
+}
+
+.container {
+  margin-top: 3rem;
+}
+
+.content {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding: 0% 1% 1% 1%;
+}
+
+.big {
+  width: 100%;
+  margin: auto;
+  padding: 0% 0% 1% 0%;
+}
+
+.small {
+  width: 48%;
+  float: left;
+  font-size: 0.75em;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.loading {
+  padding-top: 20%;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  max-height: auto;
+}
+
+h1 {
+  margin: 0;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.5%;
+  text-align: left;
+}

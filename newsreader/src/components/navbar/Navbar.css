@@ -1,0 +1,32 @@
+.navbar {
+  overflow: hidden;
+  background-color: #1d3e66;
+  color: white;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  width: 100%;
+  padding: 0px;
+  margin: auto;
+  height: 3rem;
+  text-align: center;
+}
+
+.backButton {
+  margin: 0.75rem 0rem 0.75rem 1rem;
+  font-size: 1.5rem;
+  float: left;
+  color: white;
+}
+
+.navbarHeader {
+  margin: 0.5rem;
+  font-size: 1.25rem;
+  display: inline-block;
+}
+
+.external {
+  margin: 0.75rem 1rem 0.75rem 0rem;
+  font-size: 1.5rem;
+  float: right;
+}
