@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   items: [],
-  loading: false,
+  loaded: false,
   error: null
 };
 
@@ -17,7 +17,7 @@ export default function productReducer(state = initialState, action) {
       // Also, reset any errors. We're starting fresh.
       return {
         ...state,
-        loading: true,
+        loaded: false,
         error: null
       };
 
@@ -26,7 +26,7 @@ export default function productReducer(state = initialState, action) {
       // Also, replace the items with the ones from the server
       return {
         ...state,
-        loading: false,
+        loaded: true,
         items: action.payload.articles
       };
 
@@ -40,7 +40,7 @@ export default function productReducer(state = initialState, action) {
       // Do whatever seems right for your use case.
       return {
         ...state,
-        loading: false,
+        loaded: true,
         error: action.payload.error,
         items: []
       };

@@ -1,26 +1,15 @@
 import React, { Component } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { fetchArticles } from "../../actions/articleActions";
+
 class Home extends Component {
-  state = {
-    articles: [],
-    loaded: false
-  };
-
-  componentDidMount() {
-    this.props.dispatch(fetchArticles());
-  }
-
   render() {
-    const { error, loading, articles } = this.props;
-
+    const { error, loaded, articles } = this.props.addedProps;
     if (error) {
       return <div>Error! {error.message}</div>;
     }
 
-    if (loading) {
+    if (!loaded) {
       return (
         <div className="container">
           <h2 className="loading">Loading...</h2>
@@ -63,10 +52,4 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  articles: state.articles.items,
-  loading: state.articles.loading,
-  error: state.articles.error
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;
