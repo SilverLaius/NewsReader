@@ -1,9 +1,10 @@
 body {
   font-family: "Noto Serif", serif;
+  margin: 0px;
 }
 
 .container {
-  margin-top: 3rem;
+  margin-top: 2.7rem;
 }
 
 .content {

@@ -22,7 +22,7 @@ class Home extends Component {
             let liClasses = `content ${idx % 3 === 0 ? "big" : "small"}`;
             child["childID"] =
               child.title.replace(/ /g, "") +
-              "PublishedAt" +
+              "PubAt" +
               child.publishedAt.replace(/:/g, "-");
 
             if (child["content"] != null) {

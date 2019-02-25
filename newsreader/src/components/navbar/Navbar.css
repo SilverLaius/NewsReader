@@ -7,13 +7,13 @@
   top: 0;
   width: 100%;
   padding: 0px;
-  margin: auto;
-  height: 3rem;
+  margin: 0px;
+  height: 2.7rem;
   text-align: center;
 }
 
 .backButton {
-  margin: 0.75rem 0rem 0.75rem 1rem;
+  margin: 0.6rem 1rem;
   font-size: 1.5rem;
   float: left;
   color: white;
@@ -26,7 +26,8 @@
 }
 
 .external {
-  margin: 0.75rem 1rem 0.75rem 0rem;
-  font-size: 1.5rem;
+  margin: 0.75rem 1rem;
+  font-size: 1.167rem;
   float: right;
+  color: white;
 }

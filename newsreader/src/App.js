@@ -12,19 +12,29 @@ class App extends Component {
   }
 
   render() {
-    const { error, loaded, articles } = this.props;
-    console.log({ error, loaded, articles });
     return (
       <BrowserRouter>
-        <div className="App">
-          <Navbar />
+        <div>
           <Switch>
             <Route
               path="/"
-              render={props => <Home {...props} addedProps={this.props} />}
+              render={props => (
+                <div>
+                  <Navbar view="home" />
+                  <Home {...props} addedProps={this.props} />
+                </div>
+              )}
               exact
             />
-            <Route path="/article/:id" component={Article} />
+            <Route
+              path="/article/:id"
+              render={props => (
+                <div>
+                  <Navbar view="article" addedProps={this.props} />
+                  <Article {...props} addedProps={this.props} />
+                </div>
+              )}
+            />
           </Switch>
         </div>
       </BrowserRouter>

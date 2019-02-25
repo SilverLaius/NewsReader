@@ -4,16 +4,26 @@ import "./Navbar.css";
 class Navbar extends Component {
   state = {};
   render() {
-    return (
-      <div className="navbar">
-        <Link to="/">
-          <i className="fas fa-arrow-left backButton" />
-        </Link>
+    const view = this.props.view;
+    if (view === "article") {
+      return (
+        <div className="navbar">
+          <Link to="/">
+            <i className="fas fa-arrow-left backButton" />
+          </Link>
 
-        <h3 className="navbarHeader">NEWS READER</h3>
-        <i className="fas fa-external-link-alt external" />
-      </div>
-    );
+          <h3 className="navbarHeader">NEWS READER</h3>
+          <Link to="/">
+            <i className="fas fa-external-link-alt external" />
+          </Link>
+        </div>
+      );
+    } else if (view === "home")
+      return (
+        <div className="navbar">
+          <h3 className="navbarHeader">NEWS READER</h3>
+        </div>
+      );
   }
 }
 
