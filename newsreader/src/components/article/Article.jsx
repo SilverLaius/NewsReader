@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Error from "../error/Error";
 import "./Article.css";
 
 class Article extends Component {
@@ -15,9 +16,12 @@ class Article extends Component {
       let article = this.props.addedProps.articles.find(
         a => a.articleID === currentArticleID
       );
+      if (!article) {
+        return <Error />;
+      }
       return (
-        <div className="article">
-          <h1>{article.title}</h1>
+        <div className="article container">
+          <h1 className="title">{article.title}</h1>
           <img src={article.urlToImage} alt="Not available" />
           <div className="articleContent">
             {article.content || "No content available. "}

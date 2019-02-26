@@ -11,6 +11,19 @@ class Navbar extends Component {
         let article = this.props.addedProps.articles.find(
           a => a.articleID === currentArticleID
         );
+        if (!article) {
+          return (
+            <div className="navbar">
+              <Link to="/">
+                <i className="fas fa-arrow-left backButton" />
+              </Link>
+              <h3 className="navbarHeader">NEWS READER</h3>
+              <Link to="/">
+                <i className="fas fa-external-link-alt external" />
+              </Link>
+            </div>
+          );
+        }
         return (
           <div className="navbar">
             <Link to="/">

@@ -36,7 +36,10 @@ export function fetchArticles() {
         json.articles.forEach(
           article =>
             (article["articleID"] =
-              article.source.id + article.publishedAt.replace(/:/g, "-"))
+              article.title.replace(/ /g, "_").replace(/:/g, "_") +
+              "_" +
+              article.source.id +
+              article.publishedAt.replace(/:/g, "-"))
         );
         return json;
       })
