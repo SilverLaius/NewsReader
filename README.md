@@ -8,7 +8,7 @@
 ### installing packages
 
 1. Now that you have the key configured you need to install all the needed dependencies
-2. run "npm install" in the root folder(newsreader/) and wait for npm to do all the work
+2. run "npm install" in the root folder(NewsReader/) and wait for npm to do all the work
 
 ### run the app
 

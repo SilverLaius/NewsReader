@@ -22,7 +22,7 @@ export function fetchArticles() {
   return dispatch => {
     dispatch(fetchArticlesBegin());
     return fetch(
-      "https://newsapi.org/v2/top-headlines?language=en&sources=wired,the-lad-bible",
+      "https://newsapi.org/v2/top-headlines?language=en&sources=wired,techradar,techcrunch",
       {
         method: "get",
         headers: new Headers({
