@@ -14,13 +14,7 @@ class Navbar extends Component {
         if (!article) {
           return (
             <div className="navbar">
-              <Link to="/">
-                <i className="fas fa-arrow-left backButton" />
-              </Link>
               <h3 className="navbarHeader">NEWS READER</h3>
-              <Link to="/">
-                <i className="fas fa-external-link-alt external" />
-              </Link>
             </div>
           );
         }
