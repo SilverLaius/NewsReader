@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import React, { Component } from "react";
+import { fetchArticles } from "./actions/articleActions";
+import { connect } from "react-redux";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import Article from "./components/article/Article";
-import { fetchArticles } from "./actions/articleActions";
-import { connect } from "react-redux";
+import Error from "./components/error/Error";
 
 class App extends Component {
   componentDidMount() {
@@ -20,7 +21,7 @@ class App extends Component {
               path="/"
               render={props => (
                 <div>
-                  <Navbar view="home" />
+                  <Navbar view="home" addedProps={this.props} />
                   <Home {...props} addedProps={this.props} />
                 </div>
               )}
@@ -30,8 +31,16 @@ class App extends Component {
               path="/article/:id"
               render={props => (
                 <div>
-                  <Navbar view="article" addedProps={this.props} />
+                  <Navbar view="article" {...props} addedProps={this.props} />
                   <Article {...props} addedProps={this.props} />
+                </div>
+              )}
+            />
+            <Route
+              render={() => (
+                <div>
+                  <Navbar view="home" addedProps={this.props} />
+                  <Error />
                 </div>
               )}
             />

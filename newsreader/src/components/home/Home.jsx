@@ -20,28 +20,17 @@ class Home extends Component {
         <div className="container">
           {articles.map((child, idx) => {
             let liClasses = `content ${idx % 3 === 0 ? "big" : "small"}`;
-            child["childID"] =
-              child.title.replace(/ /g, "") +
-              "PubAt" +
-              child.publishedAt.replace(/:/g, "-");
-
-            if (child["content"] != null) {
-              child["content"] = child["content"].replace(
-                new RegExp("\\[\\+\\d* chars\\]"),
-                ""
-              );
-            }
 
             return (
-              <div key={child.childID} className={liClasses}>
+              <div key={child.articleID} className={liClasses}>
                 <Link
+                  className="toArticle"
                   to={{
-                    pathname: `/article/${child.childID}`,
-                    state: { article: child }
+                    pathname: `/article/${child.articleID}`
                   }}
                 >
                   <img src={child.urlToImage} alt="Not available" />
-                  <h1>{child.title}</h1>
+                  <h1 className="title">{child.title}</h1>
                 </Link>
               </div>
             );

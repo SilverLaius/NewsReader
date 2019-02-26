@@ -1,3 +1,5 @@
+import { ApiKey } from "../config/config";
+
 export const FETCH_ARTICLES_BEGIN = "FETCH_ARTICLES_BEGIN";
 export const FETCH_ARTICLES_SUCCESS = "FETCH_ARTICLES_SUCCESS";
 export const FETCH_ARTICLES_FAILURE = "FETCH_ARTICLES_FAILURE";
@@ -24,12 +26,20 @@ export function fetchArticles() {
       {
         method: "get",
         headers: new Headers({
-          "X-Api-Key": "093aa4b3388f43e3a1c20b649338f509"
+          "X-Api-Key": ApiKey
         })
       }
     )
       .then(handleErrors)
       .then(res => res.json())
+      .then(json => {
+        json.articles.forEach(
+          article =>
+            (article["articleID"] =
+              article.source.id + article.publishedAt.replace(/:/g, "-"))
+        );
+        return json;
+      })
       .then(json => {
         dispatch(fetchArticlesSuccess(json.articles));
         return json.articles;
