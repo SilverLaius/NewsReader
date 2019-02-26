@@ -5,12 +5,12 @@
 3. Open the file and where it says "changeThisToYourApiKeyHere", change it to your key.
    For example your config.js file should look something like: export const ApiKey = "7f8dhs8bsdgbsknefkfekakef";
 
-### installing packages
+### Installing packages
 
 1. Now that you have the key configured you need to install all the needed dependencies
-2. run "npm install" in the root folder(NewsReader/) and wait for npm to do all the work
+2. Run "npm install" in the root folder(NewsReader/) and wait for npm to do all the work
 
-### run the app
+### Run the app
 
-1. now you are ready to run the app
-2. run "npm start" in the root folder and enjoy
+1. Now you are ready to run the app
+2. Run "npm start" in the root folder and enjoy
